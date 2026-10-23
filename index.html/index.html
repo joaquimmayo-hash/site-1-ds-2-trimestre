@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog de Motos</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: sans-serif;
+            background-color: #ffffff;
+            color: #222222;
+            line-height: 1.6;
+            padding: 20px;
+        }
+        header {
+            text-align: center;
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #eeeeee;
+        }
+        header h1 {
+            font-size: 2rem;
+            color: #111111;
+        }
+        header p {
+            color: #666666;
+            font-size: 0.9rem;
+        }
+        .container {
+            max-width: 650px;
+            margin: 0 auto;
+        }
+        .post {
+            margin-bottom: 40px;
+            padding-bottom: 30px;
+            border-bottom: 1px solid #eeeeee;
+        }
+        .post h2, .post h3 {
+            font-size: 1.5rem;
+            color: #111111;
+            margin-bottom: 10px;
+        }
+        .post p {
+            font-size: 1rem;
+            color: #444444;
+            margin-bottom: 15px;
+        }
+        .post img {
+            width: 100%;
+            height: auto;
+            border-radius: 4px;
+            margin-bottom: 15px;
+        }
+        .btn-curtir {
+            background-color: #f5f5f5;
+            border: 1px solid #dddddd;
+            color: #444444;
+            padding: 6px 12px;
+            font-size: 0.9rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background 0.1s ease;
+        }
+        .btn-curtir:hover {
+            background-color: #eeeeee;
+        }
+        .btn-curtir.ativo {
+            background-color: #222222;
+            border-color: #222222;
+            color: #ffffff;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Portal Duas Rodas</h1>
+        <p>Autor: Joaquim</p>
+    </header>
+
+    <div class="container">
+        
+        <article class="post">
+            <h2>BMW R 1250 GS Adventure</h2>
+            <p>A rainha das big trails continua sendo a escolha definitiva para quem busca desbravar o mundo. Equipada com o lendário motor boxer de dois cilindros e tecnologia ShiftCam, ela entrega 136 cavalos de potência com um torque brutal em baixas rotações. É a moto perfeita para viagens longas por unir conforto e grande autonomia.</p>
+            <img src="image.png" alt="BMW R 1250 GS">
+            <button class="btn-curtir" onclick="gerenciarCurtida(this)">
+                Curtir (<span class="num-curtidas">145</span>)
+            </button>
+        </article>
+
+        <article class="post">
+            <h2>Kawasaki Ninja H2R</h2>
+            <p>Se o assunto é velocidade pura, a Ninja H2R quebra todas as regras. Esta obra-prima conta com um motor de 998cc equipado com Supercharger, gerando surreais 310 cavalos de potência. Desenvolvida exclusivamente para as pistas, ela é uma das motocicletas mais rápidas já construídas.</p>
+            <img src="image copy.png" alt="Kawasaki Ninja H2R">
+            <button class="btn-curtir" onclick="gerenciarCurtida(this)">
+                Curtir (<span class="num-curtidas">312</span>)
+            </button>
+        </article>
+
+        <article class="post">
+            <h3>Honda CB 600F Hornet</h3>
+            <p>Mesmo após anos fora de linha, a Hornet mantém uma legião de fãs no Brasil. O ronco característico do seu motor tetracilíndrico de 102 cavalos de potência ainda chama a atenção por onde passa. Conhecida pela sua agilidade urbana e visual marcante, ela cravou seu nome na história nacional.</p>
+            <img src="image copy 2.png" alt="Honda Hornet">
+            <button class="btn-curtir" onclick="gerenciarCurtida(this)">
+                Curtir (<span class="num-curtidas">528</span>)
+            </button>
+        </article>
+
+    </div>
+
+    <script>
+        function gerenciarCurtida(botao) {
+            const contador = botao.querySelector('.num-curtidas');
+            let total = parseInt(contador.textContent);
+            
+            if (botao.classList.contains('ativo')) {
+                botao.classList.remove('ativo');
+                contador.textContent = total - 1;
+            } else {
+                botao.classList.add('ativo');
+                contador.textContent = total + 1;
+            }
+        }
+    </script>
+</body>
+</html>
+
